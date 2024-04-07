@@ -1,0 +1,34 @@
+def calculate_grade(mark):
+    if mark >= 90:
+        return "A"
+    elif mark >= 80:
+        return "B"
+    elif mark >= 70:
+        return "C"
+    elif mark >= 60:
+        return "D"
+    else:
+        return "F"
+
+def main():
+    num_subjects = int(input("Enter the number of subjects: "))
+    total_marks = 0
+
+    for i in range(num_subjects):
+        subject_name = input(f"Enter the name of subject {i+1}: ")
+        subject_mark = float(input(f"Enter the marks obtained in {subject_name}: "))
+        total_marks += subject_mark
+
+    average_mark = total_marks / num_subjects
+    grade = calculate_grade(average_mark)
+
+    print(f"Average mark: {average_mark}")
+    print(f"Overall grade: {grade}")
+
+    if grade == "F":
+        print("Sorry, you have failed.")
+    else:
+        print("Congratulations, you have passed!")
+
+if __name__ == "__main__":
+    main()
