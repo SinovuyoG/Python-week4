@@ -1,3 +1,4 @@
+# Define a function to calculate the grade based on the mark
 def calculate_grade(mark):
     if mark >= 90:
         return "A"
@@ -10,25 +11,32 @@ def calculate_grade(mark):
     else:
         return "F"
 
+# Define the main function to handle the program logic
 def main():
+    # Prompt the user to input the number of subjects
     num_subjects = int(input("Enter the number of subjects: "))
-    total_marks = 0
-
+    total_marks = 0  # Initialize the total_marks variable to calculate the sum of marks
+    
+    # Iterate through each subject to input marks
     for i in range(num_subjects):
-        subject_name = input(f"Enter the name of subject {i+1}: ")
-        subject_mark = float(input(f"Enter the marks obtained in {subject_name}: "))
-        total_marks += subject_mark
+        subject_name = input(f"Enter the name of subject {i+1}: ")  # Prompt user to input the subject name
+        subject_mark = float(input(f"Enter the marks obtained in {subject_name}: "))  # Prompt user to input marks for the subject
+        total_marks += subject_mark  # Add the subject's marks to the total_marks
 
-    average_mark = total_marks / num_subjects
-    grade = calculate_grade(average_mark)
+    average_mark = total_marks / num_subjects  # Calculate the average mark
+    grade = calculate_grade(average_mark)  # Determine the overall grade based on the average mark
 
+    # Print the average mark and overall grade
     print(f"Average mark: {average_mark}")
     print(f"Overall grade: {grade}")
 
+    # Print a message indicating whether the student passed or failed
     if grade == "F":
         print("Sorry, you have failed.")
     else:
         print("Congratulations, you have passed!")
 
+# Check if the script is executed directly and call the main function
 if __name__ == "__main__":
     main()
+
